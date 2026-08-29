@@ -17,12 +17,56 @@
       box-sizing: border-box;
       font-family: Arial, Helvetica, sans-serif;
       text-align: center;
-      font-size: clamp(28px, 6vw, 64px);
-      line-height: 1.15;
+      background: #fff;
+      color: #111;
+    }
+    .wrap {
+      max-width: 900px;
+    }
+    h1 {
+      margin: 0 0 28px;
+      font-size: clamp(34px, 6vw, 72px);
+      line-height: 1.1;
+      font-weight: 700;
+    }
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 16px 30px;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      background: #111;
+      color: #fff;
+    }
+    button:hover {
+      opacity: 0.85;
+    }
+    #message {
+      display: none;
+      font-size: clamp(26px, 4vw, 50px);
+      line-height: 1.25;
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
-  Gutschein für einmal von Graz nach Klöch fahren.
+  <div class="wrap">
+    <div id="voucher">
+      <h1>Gutschein für ein Taxifahrt mit deinem Lieblingsbruder von Graz nach Klöch.</h1>
+      <button type="button" onclick="redeem()">Einlösen</button>
+    </div>
+
+    <div id="message">
+      Error: Gutschein wurde bereits am 29.08.2026 eingelöst, Pech gehabt, vielleicht kriegst du nächstes Jahr ein besseres Geschenk. Trotzdem Alles Gute!
+    </div>
+  </div>
+
+  <script>
+    function redeem() {
+      document.getElementById('voucher').style.display = 'none';
+      document.getElementById('message').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
